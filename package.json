@@ -1,0 +1,26 @@
+{
+  "name": "wasteplan404-app",
+  "version": "1.0.0",
+  "description": "Waste plan management app",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "start": "node index.js",
+    "lint": "eslint"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^3.0.6",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mocha": "^6.2.1",
+    "pg": "^7.12.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.6.0",
+    "eslint-plugin-standard": "^4.0.1",
+    "mocha": "^6.2.0"
+  }
+}
