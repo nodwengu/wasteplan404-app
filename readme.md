@@ -1,4 +1,4 @@
-# Shoe catalogue API 
+# Waste Management API 
  An API used to create an app that allows management of illegal dumping easy
 
 ## Getting Started
