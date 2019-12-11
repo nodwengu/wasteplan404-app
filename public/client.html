@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Waste Demo</title>
+
+   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+
+
+</head>
+
+<body>
+   <header>
+      <nav class="navbar navbar-dark bg-dark justify-content-between">
+         <a class="navbar-brand">Navbar</a>
+         <form class="form-inline">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login / Signup</button>
+         </form>
+      </nav>
+
+
+
+      <script type="text/x-handlebars-template" class="issuesTemplate">
+         {{#each issues}}
+            <tr>
+               <td>{{type}}</td>
+               <td>{{latitude}}</td>
+               <td>{{longitude}}</td>
+               <td>{{issueid}}</td>
+               <td>{{status}}</td>
+            </tr>
+         {{/each}}
+      </script>
+   </header>
+   <div class="container">
+         <form>
+               <div class="form-group">
+                 <label for="exampleInputEmail1">Email address</label>
+                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                 <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+               </div>
+               <div class="form-group">
+                 <label for="exampleInputPassword1">Password</label>
+                 <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+               </div>
+               <div class="form-check">
+                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                 <label class="form-check-label" for="exampleCheck1">Check me out</label>
+               </div>
+               <button type="submit" class="btn btn-primary">Submit</button>
+             </form>
+
+             <div>
+              
+                <table class="table table-striped table-dark">
+                     <thead>
+                       <tr>
+                         <th scope="col">Type</th>
+                         <th scope="col">Lat</th>
+                         <th scope="col">Long</th>
+                         <th scope="col">ID</th>
+                         <th scope="col">Status</th>
+                       </tr>
+                     </thead>
+                     <tbody id="issuesDiv">
+                      
+                     </tbody>
+                   </table>
+                   
+             </div>
+
+
+   </div>
+
+
+
+
+   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"></script>
+
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"></script>
+   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+   <script src="./client.js"></script>
+</body>
+
+</html>
