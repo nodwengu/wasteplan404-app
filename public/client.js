@@ -14,7 +14,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   const showIssuesForBtn = document.querySelector('.issuesFor');
+<<<<<<< HEAD
   const addIssueBtn = document.querySelector('.addIssue');
+=======
+>>>>>>> 20711e422f3df1cea848746daf73faf6121ceb79
 
   const selectElem = document.querySelector('#issuesDiv');
 
@@ -57,6 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const results = response.data;
       const data = results.data;
       console.log(data);
+<<<<<<< HEAD
     } 
     catch (error) {
       console.log(error);
@@ -116,6 +120,15 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
   
+=======
+      
+    } 
+    catch (error) {
+      console.log(error);
+      
+    }
+   
+>>>>>>> 20711e422f3df1cea848746daf73faf6121ceb79
   });
 
 

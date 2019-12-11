@@ -37,6 +37,7 @@ app.get('/', (req, res, next) => {
   });
 });
 
+<<<<<<< HEAD
 app.post('/api/users/add', wasteAPI.addUser);
 app.get('/api/users', wasteAPI.allUsers);
 app.get('/api/user/:username', wasteAPI.getOneUser);
@@ -44,7 +45,11 @@ app.get('/api/user/:username', wasteAPI.getOneUser);
 app.get('/api/issues', wasteAPI.allIssues);
 app.get('/api/issues/:username', wasteAPI.issuesForUser);
 app.post('/api/addIssue', wasteAPI.createIssue);
+=======
 
+>>>>>>> 20711e422f3df1cea848746daf73faf6121ceb79
+
+// app.get('/api/test', wasteAPI.all);
 
 
 
