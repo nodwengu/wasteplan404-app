@@ -25,7 +25,7 @@ const wasteAPI = WasteAPI(wastePlanService);
 
 app.use(express.static(__dirname + '/public'));
 
-// parse application/x-www-form-urlencoded
+
 app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
@@ -45,7 +45,7 @@ app.post('/api/addIssue', wasteAPI.createIssue);
 
 
 
-const PORT = process.env.PORT || 3002;
+const PORT = process.env.PORT || 3003;
 
 app.listen(PORT, () => {
   console.log(`App started at http://localhost:${PORT}`);
