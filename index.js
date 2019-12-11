@@ -38,11 +38,18 @@ app.get('/', (req, res, next) => {
 });
 
 
+app.post('/api/users/add', wasteAPI.addUser);
+app.get('/api/users', wasteAPI.allUsers);
+app.get('/api/user/:username', wasteAPI.getOneUser);
+
+
 
 // app.get('/api/test', wasteAPI.all);
 
 
-const PORT = process.env.PORT || 3003;
+
+
+const PORT = process.env.PORT || 3002;
 
 app.listen(PORT, () => {
   console.log(`App started at http://localhost:${PORT}`);

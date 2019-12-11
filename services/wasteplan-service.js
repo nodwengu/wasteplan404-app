@@ -30,11 +30,9 @@ module.exports = function WastePlanService(pool) {
       user.username,
       user.password,
       user.address,
-      user.userType
-
+      user.usertype
     ];
-
-    let query = `INSERT INTO users(name, email, username, password, address, userType) VALUES($1, $2, $3, $4, $5, $6)`;
+    let query = `INSERT INTO users(name, email, username, password, address, usertype) VALUES($1, $2, $3, $4, $5, $6)`;
     return pool.query(query, userData);
   }
 
@@ -51,13 +49,22 @@ module.exports = function WastePlanService(pool) {
     const results = await pool.query(sql);
     return results.rows;
   }
+
+  async function getUser(username) {
+    const sql = `SELECT * FROM users WHERE username = '${username}'`;
+    const results = await pool.query(sql);
+    return results.rows[0];
+  }
+
+
  
   return {
     all,
     add,
     addUser,
     getAllUsers,
-    getAllUserIssues
+    getAllUserIssues,
+    getUser
   };
 
 };
