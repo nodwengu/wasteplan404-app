@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
   async function showIssues() {
     try {
       const response = await wastePlanService.getIssues();
-      const results = response.data;
+      const response = response.data;
 
       let issuessHTML = issuesTemplateInstance({ issues: results.data });
       selectElem.innerHTML = issuessHTML;

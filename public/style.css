@@ -3,8 +3,11 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     }
-
-h1{
+.navbar-brand{
+    color:green;
+    margin-left: 25em;
+}
+/* h1{
     padding: 1em;
   margin-left: 11em;
   color: black;
@@ -47,5 +50,5 @@ table {
     text-align: left;
     padding: 8px;
   }
-  
+   */
   

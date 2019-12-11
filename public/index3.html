@@ -1,38 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="/grid.css">
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> -->
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.4.2/handlebars.js" integrity="sha256-hSzapznWRy/aOZkctlN03an9DxCLlN8ZCQS0lxntiHg=" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js" integrity="sha256-S1J4GVHHDMiirir9qsXWc8ZWw74PHHafpsHp5PXtjTs=" crossorigin="anonymous"></script>
-   
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Waste Demo</title>
+   <link rel="stylesheet" href="style.css">
+   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+
+
 </head>
+
 <body>
-        <form action="/admin" method="POST">
-        <table class="admin-list">
-                <tr>
-                    <th>Name</th>
-                    <th>Location</th>
-                    <th>Date of Issue</th>
-                    <th>Status</th>
-            
-            
-                {{#each adminlist}}
-                <tr>
-                    <td >{{user-name}}</td>
-                    <td>{{location}}</td>
-                    <td>{{issue-date}}</td>
-                    <td><input type="button" class="status" value="" id="{{issue-date}}"></td>
-                </tr>
-                {{/each}}
-        
-            <table>
-            </form>
+   <header>
+      <nav class="navbar navbar-light bg-dark justify-content-between">
+         <a class="navbar-brand">Navbar</a>
+         <form class="form-inline">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login / Signup /Logout</button>
+         </form>
+      </nav>
+
+
+
+      <script type="text/x-handlebars-template" class="issuesTemplate">
+         {{#each issues}}
+            <tr>
+               <td>{{type}}</td>
+               <td>{{latitude}}</td>
+               <td>{{longitude}}</td>
+               <td>{{issueid}}</td>
+               <td>{{status}}</td>
+            </tr>
+         {{/each}}
+      </script>
+   </header>
+   <div class="container">
+      <form>
+         <div class="form-group">
+            <label for="exampleInputName1">Name</label>
+            <input type="text" class="form-control" id="exampleInputName1" placeholder="Name">
+         </div>
+         <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+               placeholder="Enter email">
+            <small id="emailHelp" class="form-text ">We'll never share your email with anyone else.</small>
+         </div>
+         <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+         </div>
+         <div class="form-check text-light">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+         </div>
+         <div class="form-check text-light">
+            <input type="checkbox" class="form-check-input" id="exampleCollection">
+            <label class="form-check-label" for="exampleCollection">Collect Bin</label>
+         </div>
+         <div class="form-check text-light">
+            <input type="checkbox" class="form-check-input" id="exampleDeliver">
+            <label class="form-check-label" for="exampleDeliver">Deliver Bin</label>
+         </div>
+         <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+
+      
+
+
+   </div>
+
+
+
+
+   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"></script>
+
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"></script>
+   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+   <script src="./client.js"></script>
 </body>
+
 </html>
