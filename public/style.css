@@ -32,3 +32,20 @@ h1{
 .submit{
     margin-left: 5em;  
 }
+.adminlist{
+    border: solid;
+}
+table {
+    
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  td, th {
+    color: black;
+    border: 1px solid black;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  

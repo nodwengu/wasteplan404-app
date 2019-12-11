@@ -27,20 +27,24 @@ app.use(express.static(__dirname + '/public'));
 
 
 app.use(bodyParser.urlencoded({ extended: false }));
-// parse application/json
+
 app.use(bodyParser.json());
 
 
 app.get('/', (req, res, next) => {
   res.json({
-    home: '<h1>Welcome: Code Invaders/Invasion(Not sure)</h1>'
+    home: 'ad'
+  });
+});
+// app.get('/api/test', wasteAPI.all);
+
+app.get('/', (req, res, next) => {
+  res.json({
+    admin: '<h1>Welcome: Code Invaders/Invasion(Not sure)</h1>'
   });
 });
 
-// app.get('/api/test', wasteAPI.all);
-
-
-const PORT = process.env.PORT || 3003;
+const PORT = process.env.PORT || 3002;
 
 app.listen(PORT, () => {
   console.log(`App started at http://localhost:${PORT}`);
