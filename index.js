@@ -38,11 +38,17 @@ app.get('/', (req, res, next) => {
 });
 // app.get('/api/test', wasteAPI.all);
 
-app.get('/', (req, res, next) => {
-  res.json({
-    admin: '<h1>Welcome: Code Invaders/Invasion(Not sure)</h1>'
-  });
-});
+app.post('/api/users/add', wasteAPI.addUser);
+app.get('/api/users', wasteAPI.allUsers);
+app.get('/api/user/:username', wasteAPI.getOneUser);
+
+app.get('/api/issues', wasteAPI.allIssues);
+app.get('/api/issues/:username', wasteAPI.issuesForUser);
+app.post('/api/addIssue', wasteAPI.createIssue);
+
+
+
+
 
 const PORT = process.env.PORT || 3002;
 
