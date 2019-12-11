@@ -69,13 +69,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
   addIssueBtn.addEventListener('click', async(e) => {
     e.preventDefault();
-    alert("adding new issue");
-    const response = await wastePlanService.getUser('jason');
+
+    const response = await wastePlanService.getUser('user1');
     const results = response.data;
     const user = results.data;
 
     searchText = user.address;
-    alert(searchText);
 
     if(user) {
       const response = await axios.get(`https://geocoder.api.here.com/6.2/geocode.json?searchtext=${searchText}&app_id=${APP_ID}&app_code=${APP_CODE}&gen=8`);
