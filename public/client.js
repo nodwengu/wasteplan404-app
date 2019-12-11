@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
   addIssueBtn.addEventListener('click', async(e) => {
     e.preventDefault();
 
-    const response = await wastePlanService.getUser('user1');
+    const response = await wastePlanService.getUser('jason');
     const results = response.data;
     const user = results.data;
 
@@ -84,9 +84,9 @@ document.addEventListener('DOMContentLoaded', function () {
       const latitude = data.Latitude;
       const longitude = data.Longitude;
 
-      console.log("Lat: ", latitude);
-      console.log("Long: ", longitude);
-      console.log("User Id", user.id);
+      // console.log("Lat: ", latitude);
+      // console.log("Long: ", longitude);
+      // console.log("User Id", user.id);
 
       var selectedValue = "";
       if(document.getElementById('deliveryCheck').checked) {
