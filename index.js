@@ -41,6 +41,7 @@ app.post('/api/users/add', wasteAPI.addUser);
 app.get('/api/users', wasteAPI.allUsers);
 
 app.get('/api/issues', wasteAPI.allIssues);
+app.get('/api/issues/:username', wasteAPI.issuesForUser);
 app.post('/api/addIssue', wasteAPI.createIssue);
 
 

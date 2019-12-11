@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const issuesTemplateInstance = Handlebars.compile(issuesTemplate.innerHTML);
 
 
-  const showIssuesBtn = document.querySelector('.showIssues');
+  const showIssuesForBtn = document.querySelector('.issuesFor');
 
   const selectElem = document.querySelector('#issuesDiv');
 
@@ -44,13 +44,26 @@ document.addEventListener('DOMContentLoaded', function () {
   
   }
 
+ 
+
   users();
   showIssues();
 
   
-  // showIssuesBtn.addEventListener('click', function() {
+  showIssuesForBtn.addEventListener('click', async function() {
+    try {
+      const response = await wastePlanService.getAllFor('user1');
+      const results = response.data;
+      const data = results.data;
+      console.log(data);
+      
+    } 
+    catch (error) {
+      console.log(error);
+      
+    }
    
-  // });
+  });
 
 
 
@@ -62,12 +75,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function WastePlanService() {
 
+  //Return all users
   function getUsers() {
     return axios.get('/api/users');
   }
 
+  // Return all issues
   function getIssues() {
     return axios.get('/api/issues');
+  }
+
+  // Return issues for a specific user
+  function getAllFor(username) {
+    return axios.get(`/api/issues/${username}`);
   }
 
 
@@ -75,7 +95,8 @@ function WastePlanService() {
 
   return {
     getUsers,
-    getIssues
+    getIssues,
+    getAllFor
    
   };
 }
