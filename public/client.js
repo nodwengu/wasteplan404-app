@@ -15,9 +15,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const showIssuesForBtn = document.querySelector('.issuesFor');
 <<<<<<< HEAD
+<<<<<<< HEAD
   const addIssueBtn = document.querySelector('.addIssue');
 =======
 >>>>>>> 20711e422f3df1cea848746daf73faf6121ceb79
+=======
+  const addIssueBtn = document.querySelector('.addIssue');
+>>>>>>> 6fb2ff18a38327f9fe49b92117d62657d268f240
 
   const selectElem = document.querySelector('#issuesDiv');
 
@@ -34,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
   async function showIssues() {
     try {
       const response = await wastePlanService.getIssues();
-      const results = response.data;
+      const response = response.data;
 
       let issuessHTML = issuesTemplateInstance({ issues: results.data });
       selectElem.innerHTML = issuessHTML;
@@ -61,6 +65,9 @@ document.addEventListener('DOMContentLoaded', function () {
       const data = results.data;
       console.log(data);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 6fb2ff18a38327f9fe49b92117d62657d268f240
     } 
     catch (error) {
       console.log(error);
@@ -120,6 +127,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
   
+<<<<<<< HEAD
 =======
       
     } 
@@ -129,6 +137,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
    
 >>>>>>> 20711e422f3df1cea848746daf73faf6121ceb79
+=======
+>>>>>>> 6fb2ff18a38327f9fe49b92117d62657d268f240
   });
 
 

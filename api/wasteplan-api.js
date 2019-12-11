@@ -135,20 +135,6 @@ module.exports = function (wastePlanService) {
     }
   }
 
-  async function issuesForUser(req, res, next) {
-    try {
-      const issuesFor = await waiterPlanService.getAllUserIssues();
-
-      res.json({
-        status: 'success',
-        data: issuesFor,
-      });
-    } catch (error) {
-      console.log(error);
-      
-    }
-  }
-
 
   return {
     allIssues,
@@ -156,11 +142,16 @@ module.exports = function (wastePlanService) {
     addUser,
     allUsers,
 <<<<<<< HEAD
+<<<<<<< HEAD
     issuesForUser,
     getOneUser
 =======
     issuesForUser
 >>>>>>> 20711e422f3df1cea848746daf73faf6121ceb79
+=======
+    issuesForUser,
+    getOneUser
+>>>>>>> 6fb2ff18a38327f9fe49b92117d62657d268f240
 
 
   };

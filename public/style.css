@@ -3,8 +3,11 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     }
-
-h1{
+.navbar-brand{
+    color:green;
+    margin-left: 25em;
+}
+/* h1{
     padding: 1em;
   margin-left: 11em;
   color: black;
@@ -32,3 +35,20 @@ h1{
 .submit{
     margin-left: 5em;  
 }
+.adminlist{
+    border: solid;
+}
+table {
+    
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  td, th {
+    color: black;
+    border: 1px solid black;
+    text-align: left;
+    padding: 8px;
+  }
+   */
+  
