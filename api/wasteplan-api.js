@@ -66,12 +66,27 @@ module.exports = function (waiterPlanService) {
     }
   }
 
+  async function issuesForUser(req, res, next) {
+    try {
+      const issuesFor = await waiterPlanService.getAllUserIssues();
+
+      res.json({
+        status: 'success',
+        data: issuesFor,
+      });
+    } catch (error) {
+      console.log(error);
+      
+    }
+  }
+
 
   return {
     allIssues,
     createIssue,
     addUser,
-    allUsers
+    allUsers,
+    issuesForUser
 
 
   };
