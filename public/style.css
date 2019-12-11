@@ -1,0 +1,34 @@
+body{ 
+    background-image: url(tree.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+
+h1{
+    padding: 1em;
+  margin-left: 11em;
+  color: black;
+}
+.userInput{
+    color: black;
+    font-size: 1.5em;
+   justify-content: center;
+   margin-left: 17em;
+}
+.userName{
+    margin-block-end: 2em;  
+}
+.street{
+    margin-top: 2em; 
+    margin-bottom: 2em; 
+}
+.bin{
+    justify-content: center;
+    margin-left: 20em;
+}
+.checkbox{
+    margin-left: 5em;   
+}
+.submit{
+    margin-left: 5em;  
+}
