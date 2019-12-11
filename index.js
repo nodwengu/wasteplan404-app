@@ -37,14 +37,14 @@ app.get('/', (req, res, next) => {
   });
 });
 
+
 app.post('/api/users/add', wasteAPI.addUser);
 app.get('/api/users', wasteAPI.allUsers);
 app.get('/api/user/:username', wasteAPI.getOneUser);
 
-app.get('/api/issues', wasteAPI.allIssues);
-app.get('/api/issues/:username', wasteAPI.issuesForUser);
-app.post('/api/addIssue', wasteAPI.createIssue);
 
+
+// app.get('/api/test', wasteAPI.all);
 
 
 
