@@ -39,6 +39,7 @@ app.get('/', (req, res, next) => {
 
 app.post('/api/users/add', wasteAPI.addUser);
 app.get('/api/users', wasteAPI.allUsers);
+app.get('/api/user/:username', wasteAPI.getOneUser);
 
 app.get('/api/issues', wasteAPI.allIssues);
 app.get('/api/issues/:username', wasteAPI.issuesForUser);
@@ -46,7 +47,9 @@ app.post('/api/addIssue', wasteAPI.createIssue);
 
 
 
-const PORT = process.env.PORT || 3003;
+
+
+const PORT = process.env.PORT || 3002;
 
 app.listen(PORT, () => {
   console.log(`App started at http://localhost:${PORT}`);
