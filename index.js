@@ -1,19 +1,18 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-
+const cors = require('cors')
 const app = express();
-
 const WasteAPI = require('./api/wasteplan-api');
 const WastePlanService = require('./services/wasteplan-service');
 const { Pool, Client } = require('pg');
-
+app.use(cors);
 let useSSL = false;
 let local = process.env.LOCAL || false;
 if (process.env.DATABASE_URL && !local) {
   useSSL = true;
 }
 
-const connectionString = process.env.DATABASE_URL || 'postgresql://coder:pg123@localhost:5432/wasteplan_db';
+const connectionString = process.env.DATABASE_URL || 'postgresql://codex:codex123@localhost:5432/wasteplan_db';
 
 const pool = new Pool({
   connectionString,

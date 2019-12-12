@@ -22,7 +22,7 @@ module.exports = function WastePlanService(pool) {
     let query = `INSERT INTO issues(userId, date, type, status, latitude, longitude) VALUES($1, $2, $3, $4, $5, $6)`;
     return pool.query(query, data);
   }
- 
+  add
   async function addUser(user) {
     let userData = [
       user. name,
@@ -33,11 +33,12 @@ module.exports = function WastePlanService(pool) {
       user.usertype
     ];
     let query = `INSERT INTO users(name, email, username, password, address, usertype) VALUES($1, $2, $3, $4, $5, $6)`;
+    console.log(query);
     return pool.query(query, userData);
   }
 
   async function getAllUsers() {
-    const sql = `SELECT * FROM users`;
+    const sql = `SELECT * FROM users`; 
     const results = await pool.query(sql);
     return results.rows;
   }

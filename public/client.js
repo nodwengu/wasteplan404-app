@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
   
   showIssuesForBtn.addEventListener('click', async function() {
     try {
-      const response = await wastePlanService.getAllFor('user1');
+      const response = await wastePlanService.getAllFor('jason1');
       const results = response.data;
       const data = results.data;
       console.log(data);
@@ -69,16 +69,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
   addIssueBtn.addEventListener('click', async(e) => {
     e.preventDefault();
-    alert("adding new issue");
-    const response = await wastePlanService.getUser('jason');
+
+    const response = await wastePlanService.getUser('jason1');
     const results = response.data;
     const user = results.data;
 
     searchText = user.address;
-    alert(searchText);
 
     if(user) {
-      const response = await axios.get(`https://geocoder.api.here.com/6.2/geocode.json?searchtext=${searchText}&app_id=${APP_ID}&app_code=${APP_CODE}&gen=8`);
+      const response = await axios.get(`haddIssueBtnttps://geocoder.api.here.com/6.2/geocode.json?searchtext=${searchText}&app_id=${APP_ID}&app_code=${APP_CODE}&gen=8`);
       const results = response.data;
       const data = results.Response.View[0].Result[0].Location.DisplayPosition;
 
