@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            /* Always set the map height explicitly to define the size of the div
+             * element that contains the map. */
+            #map {
+              height: 400px;
+              width: 100%;
+            }
+          
+          </style>
+</head>
+<body>
+    <h1>Maps</h1>
+        <div id="map"></div>
+<script>
+    function initMap(){
+        var options ={
+            zoom:8,
+            center:{lat:33.9249 , lng:-18.4241}
+        }
+        var map = new google.maps.Map(document.getElementById('map'),options)
+        //add maker
+        var maker = new goole.maps.Maker(document.getElementById({
+                position:{lat:33.7342 , lng:-18.9621},
+                map:map,
+                icon:""
+    
+        }))
+    }
+    
+    </script>
+ <script src="https://maps.googleapis.com/maps/api/js?key= AIzaSyAtWL8Y4lcE8FO9G8Id8Gis2NLiB8BKUNM &callback=initMap"
+        async defer></script>
+</body>
+
+</html>

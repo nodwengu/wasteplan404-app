@@ -26,15 +26,16 @@ app.use(express.static(__dirname + '/public'));
 
 
 app.use(bodyParser.urlencoded({ extended: false }));
-// parse application/json
+
 app.use(bodyParser.json());
 
 
 app.get('/', (req, res, next) => {
   res.json({
-    home: '<h1>Welcome: Code Invaders/Invasion(Not sure)</h1>'
+    home: 'ad'
   });
 });
+// app.get('/api/test', wasteAPI.all);
 
 
 app.post('/api/users/add', wasteAPI.addUser);
@@ -48,7 +49,7 @@ app.get('/api/user/:username', wasteAPI.getOneUser);
 
 
 
-const PORT = process.env.PORT || 3002;
+const PORT = process.env.PORT || 3003;
 
 app.listen(PORT, () => {
   console.log(`App started at http://localhost:${PORT}`);
