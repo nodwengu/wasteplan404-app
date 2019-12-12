@@ -49,10 +49,7 @@ module.exports = function WastePlanService(pool) {
     const results = await pool.query(sql);
     return results.rows;
   }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 6fb2ff18a38327f9fe49b92117d62657d268f240
+
 
   async function getUser(username) {
     const sql = `SELECT * FROM users WHERE username = '${username}'`;
@@ -61,28 +58,21 @@ module.exports = function WastePlanService(pool) {
   }
 
 
-<<<<<<< HEAD
-=======
->>>>>>> 20711e422f3df1cea848746daf73faf6121ceb79
-=======
->>>>>>> 6fb2ff18a38327f9fe49b92117d62657d268f240
  
   return {
     all,
     add,
     addUser,
     getAllUsers,
-<<<<<<< HEAD
-<<<<<<< HEAD
+
     getAllUserIssues,
     getUser
-=======
-    getAllUserIssues
->>>>>>> 20711e422f3df1cea848746daf73faf6121ceb79
-=======
-    getAllUserIssues,
-    getUser
->>>>>>> 6fb2ff18a38327f9fe49b92117d62657d268f240
+
+    // getAllUserIssues
+
+    // getAllUserIssues,
+    // getUser
+
   };
 
 };
