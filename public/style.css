@@ -4,8 +4,11 @@ body{
     background-size: cover;
     }
 .navbar-brand{
-    color:green;
+    color:black;
     margin-left: 25em;
+}
+.issuesFor{
+    margin-left: 6em;
 }
 /* h1{
     padding: 1em;

@@ -16,12 +16,14 @@
 
 <body>
    <header>
-      <nav class="navbar navbar-lighter bg-dark justify-content-between">
-         <a class="navbar-brand">Navbar</a>
-         <form class="form-inline">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login / Signup /Logout</button>
-         </form>
-      </nav>
+         <nav class="navbar navbar-light bg-dark justify-content-between">
+               <a class="navbar-brand">
+                   <h2>Wasteplan404-app</h2>
+               </a>
+               <form class="form-inline">
+                   <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login / Signup /Logout</button>
+               </form>
+           </nav>
 
 
 
@@ -43,7 +45,7 @@
          <div class="form-group">
             <label for="inputName">Name</label>
             <input type="text" class="form-control" id="inputName" value="Name From database">
-            <small id="inputName" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            <small id="inputName" class="form-text ">We'll never share your email with anyone else.</small>
          </div>
          <div class="form-group">
             <label for="formControlTextarea">Address</label>
@@ -53,12 +55,13 @@
 
             <input class="form-check-input" type="radio" name="exampleRadios" id="deliveryCheck" value="Delivery">
             <label class="form-check-label" for="deliveryCheck">Delivery</label>
-            
+
          </div>
          <div class="form-check">
 
-         <input class="form-check-input" type="radio" name="exampleRadios" id="collectionCheck" value="Collection" checked>
-         <label class="form-check-label" for="collectionCheck">Collection</label>
+            <input class="form-check-input" type="radio" name="exampleRadios" id="collectionCheck" value="Collection"
+               checked>
+            <label class="form-check-label" for="collectionCheck">Collection</label>
          </div>
          <button class="btn btn-primary addIssue">Submit</button>
       </form>
@@ -99,6 +102,10 @@
       crossorigin="anonymous"></script>
    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
    <script src="./client.js"></script>
+
+   <script 
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtWL8Y4lcE8FO9G8Id8Gis2NLiB8BKUNM &callback=initMap">
+    </script>
 </body>
 
 </html>

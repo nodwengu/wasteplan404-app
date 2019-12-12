@@ -47,9 +47,6 @@ app.get('/api/issues/:username', wasteAPI.issuesForUser);
 app.post('/api/addIssue', wasteAPI.createIssue);
 
 
-
-
-
 const PORT = process.env.PORT || 3003;
 
 app.listen(PORT, () => {
