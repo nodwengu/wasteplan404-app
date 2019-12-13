@@ -130,14 +130,14 @@ document.addEventListener('DOMContentLoaded', function () {
       // first check if there isn't any value in storage then save
       // remove any with the same name
 
-      storage(loginUsername);
+      storage(usernameVal);
       // alert("about to create variable on local storage");
       // first check if there isn't any value in storage then save
       // remove any with the same name
 
-      storage(loginUsername);
+      storage(usernameVal);
 
-      storage(loginUsername);
+      storage(usernameVal);
       window.location = "/user.html";
     } catch (error) {
       console.log(error);

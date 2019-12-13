@@ -152,7 +152,7 @@ module.exports = function (wastePlanService) {
       const user = await wastePlanService.getUser(username);
 
       if (user && user.username == username && user.password == password) {
-        console.log("Valid user");
+    
         res.json({
           success: true,
           message: "Logged in...",
