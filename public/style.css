@@ -7,6 +7,12 @@ body{
     color:green;
     margin-left: 25em;
 }
+#map {
+height: 500px;
+width: 100%;
+margin: 0;
+padding: 0;
+}
 /* h1{
     padding: 1em;
   margin-left: 11em;

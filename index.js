@@ -25,7 +25,6 @@ const wasteAPI = WasteAPI(wastePlanService);
 
 app.use(express.static(__dirname + '/public'));
 
-
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(bodyParser.json());
@@ -47,6 +46,7 @@ app.get('/api/issues', wasteAPI.allIssues);
 app.get('/api/issues/:username', wasteAPI.issuesForUser);
 app.post('/api/addIssue', wasteAPI.createIssue);
 
+// app.get('/api/test', wasteAPI.all);
 
 const PORT = process.env.PORT || 3003;
 

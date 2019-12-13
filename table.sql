@@ -23,4 +23,7 @@ CREATE TABLE users(
 );
 
 
+
+
 INSERT INTO users(name,email,username,password,address,usertype) VALUES('siwe','siwe@gmail.com','siwe','siwe123','Test adress','admin');
+

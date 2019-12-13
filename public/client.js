@@ -36,6 +36,10 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log("Users: ", users);
   }
 
+  async function showIssues() {
+    try {
+      const response = await wastePlanService.getIssues();
+      const results = response.data;
 
   // const url = `https://geocoder.api.here.com/6.2/geocode.json?searchtext=samora machel&app_id=DnSYeWcQdc7VGpTWdf3R&app_code=MsbWu2efljEK5A7w_hrs_g&gen=8`;
   // const APP_ID = `DnSYeWcQdc7VGpTWdf3R`;
@@ -130,14 +134,14 @@ document.addEventListener('DOMContentLoaded', function () {
       // first check if there isn't any value in storage then save
       // remove any with the same name
 
-      storage(loginUsername);
+      storage(usernameVal);
       // alert("about to create variable on local storage");
       // first check if there isn't any value in storage then save
       // remove any with the same name
 
-      storage(loginUsername);
+      storage(usernameVal);
 
-      storage(loginUsername);
+      storage(usernameVal);
       window.location = "/user.html";
     } catch (error) {
       console.log(error);
