@@ -23,8 +23,7 @@ CREATE TABLE users(
 );
 
 
--- INSERT INTO colors(color_name) VALUES('Red'),('Black'),('White'),('Pink');
 
--- INSERT INTO brands(brand_name) VALUES('Nike'),('Adidas'),('Puma'),('Allstar');
 
--- INSERT INTO sizes(size) VALUES(9),(10),(5),(1);
+INSERT INTO users(name,email,username,password,address,usertype) VALUES('siwe','siwe@gmail.com','siwe','siwe123','Test adress','admin');
+

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Waste Demo</title>
+   <link rel="stylesheet" href="style.css">
+   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+
+</head>
+
+<body>
+   <header>
+      <nav class="navbar navbar-lighter bg-dark justify-content-between">
+         <a class="navbar-brand">Navbar</a>
+         <form class="form-inline">
+            <button id="adminLogout" class="btn btn-outline-success my-2 my-sm-0" type="button" data-toggle="modal"
+               data-target="#exampleModal">Logout</button>
+         </form>
+      </nav>
+      <script type="text/x-handlebars-template" class="issuesTemplate">
+        {{#each issues}}
+           <tr>
+              <td>{{type}}</td>
+              <td>{{latitude}}</td>
+              <td>{{longitude}}</td>
+              <td>{{issueid}}</td>
+              <td>{{status}}</td>
+              <td><button type="button" class="btn btn-dark">Dark</button></td>
+           </tr>
+        {{/each}}
+     </script>
+   </header>
+   <div class="container">
+      <div class="mt-4">
+         <table class="table table-striped table-dark">
+            <thead>
+               <tr>
+                  <th scope="col">Type</th>
+                  <th scope="col">Lat</th>
+                  <th scope="col">Long</th>
+                  <th scope="col">ID</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Actions</th>
+               </tr>
+            </thead>
+            <tbody id="issuesDiv">
+
+            </tbody>
+         </table>
+      </div>
+   </div>
+
+
+   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"></script>
+
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"></script>
+   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+   <script src="./admin.js"></script>
+   <!-- <script src="./client.js"></script> -->
+</body>
+
+</html>

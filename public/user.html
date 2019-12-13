@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Waste Demo</title>
+   <link rel="stylesheet" href="style.css">
+   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+
+</head>
+
+<body>
+   <header>
+      <nav class="navbar navbar-lighter bg-dark justify-content-between">
+         <a class="navbar-brand">Navbar</a>
+         <form class="form-inline">
+            <button id="userLogout" class="btn btn-outline-success my-2 my-sm-0" type="button" data-toggle="modal"
+               data-target="#exampleModal">Logout</button>
+         </form>
+      </nav>
+      <script type="text/x-handlebars-template" class="userIssuesTemplate">
+         {{#each userIssues}}
+            <tr>
+               <td>{{type}}</td>
+               <td>{{latitude}}</td>
+               <td>{{longitude}}</td>
+               <td>{{issueid}}</td>
+               <td>{{status}}</td>
+               <td>{{username}}</td>
+               <td><button type="button" class="btn btn-dark">Dark</button></td>
+            </tr>
+         {{/each}}
+      </script>
+       
+      <script type="text/x-handlebars-template" class="usernameTemplate">
+         <label for="inputName">Name</label>
+         <input type="text" class="form-control" id="userInputName" value="{{ userInputNameVal }}" disabled="true">
+      </script>
+
+      <script type="text/x-handlebars-template" class="addressTemplate">
+         <label for="inputName">Name</label>
+         <input type="text" class="form-control" id="addressTextarea" value="{{ addressTextareaVal }}" disabled="true">
+      </script>
+
+   </header>
+   <div class="container">
+      <div>
+         <div class="form-group" id="nameInput">
+            <label for="inputName">Name</label>
+            <input type="text" class="form-control" id="userInputName" value="Name From database" disabled="true">
+         </div>
+         <div class="form-group">
+            <label for="formControlTextarea">Address</label>
+            <textarea class="form-control" id="addressTextarea" rows="4" disabled="true">Address From database</textarea>
+         </div>
+         <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="deliveryCheck" value="Delivery">
+            <label class="form-check-label" for="deliveryCheck">Delivery</label>
+         </div>
+         <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="collectionCheck" value="Collection"
+               checked>
+            <label class="form-check-label" for="collectionCheck">Collection</label>
+         </div>
+
+         <div>
+            <button class="btn btn-primary addIssue">Submit</button>
+            <button class="btn btn-primary my-2 my-sm-0 issuesFor" data-toggle="modal" data-target="#exampleModal">Sent Issues</button>
+         </div>
+      </div>
+
+
+               
+      <!-- Modal -->
+   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-xl" role="document" style="max-width: 80%;">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h5 class="modal-title" id="exampleModalLabel">My Issues</h5>
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+               </button>
+            </div>
+            <div class="modal-body">
+               <div class="container mt-2 mb-4">
+                  <div class="col-sm-12">
+                     <div class="tab-content" id="pills-tabContent">
+                        <div class="tab-pane fade show active" id="pills-signin" role="tabpanel" aria-labelledby="pills-signin-tab">
+                           <h4>List of issues</h4>
+
+                           <table class="table table-striped table-dark">
+                              <thead>
+                                 <tr>
+                                    <th scope="col">Type</th>
+                                    <th scope="col">Lat</th>
+                                    <th scope="col">Long</th>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">Actions</th>
+                                 </tr>
+                              </thead>
+                              <tbody id="userIssuesDiv">
+                     
+                              </tbody>
+                           </table>                     
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+      </div>
+   </div>
+</div>
+
+
+
+   </div>
+
+         
+
+   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"></script>
+
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"></script>
+   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+   <script src="./user.js"></script>
+   <!-- <script src="./client.js"></script> -->
+</body>
+
+</html>
