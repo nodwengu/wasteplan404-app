@@ -162,7 +162,7 @@ module.exports = function (wastePlanService) {
         success: false,
         message: "Error: Invalid login",
       });
-console.log("invalid user")
+
     }
     catch (error) {
       console.log(error);
