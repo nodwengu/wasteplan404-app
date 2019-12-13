@@ -51,7 +51,7 @@ app.post('/api/addIssue', wasteAPI.createIssue);
 
 
 
-const PORT = process.env.PORT || 303;
+const PORT = process.env.PORT || 3003;
 
 app.listen(PORT, () => {
   console.log(`App started at http://localhost:${PORT}`);
