@@ -5,12 +5,20 @@ document.addEventListener('DOMContentLoaded', function () {
     let templateInstance = Handlebars.compile(template.innerHTML);
     return templateInstance;
   };
+  // alert("alert from client");
+
+  //console.log(document.querySelector('#userInputName'));
+  //Reference template from the DOM by Template class names
+  //const issuesTemplate = document.querySelector('.issuesTemplate');
+  // console.log("TEMPLATE:", issuesTemplate);
+  //Creating and compiling template instances
+  //const issuesTemplateInstance = Handlebars.compile(issuesTemplate.innerHTML);
 
   //Reference template from the DOM by Template class names
-  const issuesTemplate = document.querySelector('.issuesTemplate');
-
+  // const userIssuesTemplate = document.querySelector('.userIssuesTemplate');
+  // console.log("TEMPLATE:", userIssuesTemplate);
   //Creating and compiling template instances
-  const issuesTemplateInstance = Handlebars.compile(issuesTemplate.innerHTML);
+  //const userIssuesTemplateInstance = Handlebars.compile(userIssuesTemplate.innerHTML);
 
 
   const showIssuesForBtn = document.querySelector('.issuesFor');
@@ -28,96 +36,176 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log("Users: ", users);
   }
 
-  async function showIssues() {
-    try {
-      const response = await wastePlanService.getIssues();
-      const response = response.data;
 
-      let issuessHTML = issuesTemplateInstance({ issues: results.data });
-      selectElem.innerHTML = issuessHTML;
-      
-      console.log("Issues: ", results.data);
+  // const url = `https://geocoder.api.here.com/6.2/geocode.json?searchtext=samora machel&app_id=DnSYeWcQdc7VGpTWdf3R&app_code=MsbWu2efljEK5A7w_hrs_g&gen=8`;
+  // const APP_ID = `DnSYeWcQdc7VGpTWdf3R`;
+  // const APP_CODE = `MsbWu2efljEK5A7w_hrs_g`;
+  // var searchText = '';
 
-    } 
-    catch (error) {
-      console.log(error);
-    }
-  
-  }
+  // addIssueBtn.addEventListener('click', async(e) => {
+  //   e.preventDefault();
 
- 
+  //   const response = await wastePlanService.getUser('jason');
+  //   const results = response.data;
+  //   const user = results.data;
 
-  users();
-  showIssues();
+  //   searchText = user.address;
 
-  
-  showIssuesForBtn.addEventListener('click', async function() {
-    try {
-      const response = await wastePlanService.getAllFor('user1');
-      const results = response.data;
-      const data = results.data;
-      console.log(data);
-    } 
-    catch (error) {
-      console.log(error);
-    }
-  });
-  const url = `https://geocoder.api.here.com/6.2/geocode.json?searchtext=samora machel&app_id=DnSYeWcQdc7VGpTWdf3R&app_code=MsbWu2efljEK5A7w_hrs_g&gen=8`;
-  const APP_ID = `DnSYeWcQdc7VGpTWdf3R`;
-  const APP_CODE = `MsbWu2efljEK5A7w_hrs_g`;
-  var searchText = '';
+  //   if(user) {
+  //     const response = await axios.get(`https://geocoder.api.here.com/6.2/geocode.json?searchtext=${searchText}&app_id=${APP_ID}&app_code=${APP_CODE}&gen=8`);
+  //     const results = response.data;
+  //     const data = results.Response.View[0].Result[0].Location.DisplayPosition;
 
-  addIssueBtn.addEventListener('click', async(e) => {
+  //     const latitude = data.Latitude;
+  //     const longitude = data.Longitude;
+
+  //     // console.log("Lat: ", latitude);
+  //     // console.log("Long: ", longitude);
+  //     // console.log("User Id", user.id);
+
+  //     var selectedValue = "";
+  //     if(document.getElementById('deliveryCheck').checked) {
+  //       selectedValue = document.getElementById('deliveryCheck').value;
+  //     }else if(document.getElementById('collectionCheck').checked) {
+  //       selectedValue = document.getElementById('collectionCheck').value;
+  //     }
+
+  //     const newIssue = {
+  //       userId: user.id,
+  //       date: new Date(),
+  //       type: selectedValue, //get type of input
+  //       status: true,
+  //       latitude: latitude,
+  //       longitude: longitude
+  //     };
+
+  //     await wastePlanService.addIssue(newIssue);
+
+  //     const test = await wastePlanService.getIssues();
+  //     const testresults = test.data;
+
+  //     let issuessHTML = issuesTemplateInstance({ issues: testresults.data });
+  //     selectElem.innerHTML = issuessHTML;
+
+  //     //console.log("API DATA: ",response.data.Response.View[0].Result[0].Location.DisplayPosition);
+  //   }
+
+
+  // });
+
+
+
+
+  const signupBtn = document.querySelector('#signupBtn');
+  const signinBtn = document.querySelector('#signinBtn');
+
+
+  async function signup(e) {
     e.preventDefault();
 
-    const response = await wastePlanService.getUser('jason');
-    const results = response.data;
-    const user = results.data;
+    let nameVal = document.querySelector('#signupname').value;
+    let emailVal = document.querySelector('#signupemail').value;
+    let usernameVal = document.querySelector('#signupusername').value;
+    let passwordVal = document.querySelector('#signuppassword').value;
+    let addressVal = document.querySelector('#signupaddress').value;
 
-    searchText = user.address;
+    let newUser = {
+      name: nameVal,
+      email: emailVal,
+      username: usernameVal,
+      password: passwordVal,
+      address: addressVal,
+      usertype: 'user'
+    };
 
-    if(user) {
-      const response = await axios.get(`https://geocoder.api.here.com/6.2/geocode.json?searchtext=${searchText}&app_id=${APP_ID}&app_code=${APP_CODE}&gen=8`);
-      const results = response.data;
-      const data = results.Response.View[0].Result[0].Location.DisplayPosition;
+    try {
+      const response = await wastePlanService.signupUser(newUser);
+      let message = response.data.message;
+      // alert(message);
+      // console.log(message);//Create a username variable on local storage
+      // alert("about to create variable on local storage");
+      // first check if there isn't any value in storage then save
+      // remove any with the same name//Create a username variable on lo//Create a username variable on local storage
+      // alert("about to create variable on local storage");
+      // first check if there isn't any value in storage then save
+      // remove any with the same name
 
-      const latitude = data.Latitude;
-      const longitude = data.Longitude;
+      storage(loginUsername);
+      // alert("about to create variable on local storage");
+      // first check if there isn't any value in storage then save
+      // remove any with the same name
 
-      // console.log("Lat: ", latitude);
-      // console.log("Long: ", longitude);
-      // console.log("User Id", user.id);
+      storage(loginUsername);
 
-      var selectedValue = "";
-      if(document.getElementById('deliveryCheck').checked) {
-        selectedValue = document.getElementById('deliveryCheck').value;
-      }else if(document.getElementById('collectionCheck').checked) {
-        selectedValue = document.getElementById('collectionCheck').value;
-      }
-      
-      const newIssue = {
-        userId: user.id,
-        date: new Date(),
-        type: selectedValue, //get type of input
-        status: true,
-        latitude: latitude,
-        longitude: longitude
-      };
-
-      await wastePlanService.addIssue(newIssue);
-      
-      const test = await wastePlanService.getIssues();
-      const testresults = test.data;
-
-      let issuessHTML = issuesTemplateInstance({ issues: testresults.data });
-      selectElem.innerHTML = issuessHTML;
-      
-      //console.log("API DATA: ",response.data.Response.View[0].Result[0].Location.DisplayPosition);
+      storage(loginUsername);
+      window.location = "/user.html";
+    } catch (error) {
+      console.log(error);
     }
 
-  
-  });
+  }
+  // let userInputName = document.querySelector('#userInputName')
+  // console.log(userInputName.value)
 
+  function storage(theName) {
+    localStorage.setItem('wastePlanUser', theName);
+  };
+
+  async function login() {
+    try {
+      let loginUsername = document.querySelector('#signinusername').value;
+      let loginPassword = document.querySelector('#signinpassword').value;
+
+      let data = {
+        username: loginUsername,
+        password: loginPassword
+      };
+
+      const response = await wastePlanService.loginUser(data);
+      const results = response.data;
+
+      if (results.success) {
+        //Create a username variable on local storage
+        // alert("about to create variable on local storage");
+        // first check if there isn't any value in storage then save
+        // remove any with the same name
+
+        storage(loginUsername);
+
+
+        const userResponse = await wastePlanService.getUser(loginUsername);
+        const userResults = userResponse.data;
+        const user = userResults.data;
+
+        // let userInputName = document.querySelector('#userInputName')
+        // // userInputNameVal = "wewewewe";
+        // console.log(userInputName)
+
+        if (user.usertype == 'user') {
+          //alert('success');
+          // let userInputNameVal = document.querySelector('#userInputName').value;
+          // alert(userInputNameVal)
+          // console.log(userInputName)
+          //document.querySelector('#userInputName').value = "sdsdsdsd"
+          window.location = "/user.html";
+        } else {
+          window.location = "/admin.html";
+        }
+
+        //Store the username in the local storage
+        //Then redirect the user to the required page
+        // window.location = "https://wasteplan404-webapp.herokuapp.com/";
+      } else {
+        alert(results.message);
+      }
+
+    }
+    catch (error) {
+      console.log(error);
+    }
+  }
+  signupBtn.addEventListener('click', signup);
+  signinBtn.addEventListener('click', login);
 
 
 
@@ -153,6 +241,15 @@ function WastePlanService() {
   }
 
 
+  function signupUser(data) {
+    return axios.post('/api/users/add', data);
+  }
+
+  function loginUser(data) {
+    return axios.post('/api/login', data);
+  }
+
+
 
 
   return {
@@ -160,7 +257,10 @@ function WastePlanService() {
     getIssues,
     getAllFor,
     getUser,
-    addIssue
-   
+    addIssue,
+
+    signupUser,
+    loginUser
+
   };
 }

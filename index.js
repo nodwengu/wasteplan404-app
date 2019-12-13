@@ -37,6 +37,7 @@ app.get('/', (req, res, next) => {
   });
 });
 // app.get('/api/test', wasteAPI.all);
+app.post('/api/login', wasteAPI.login);
 
 app.post('/api/users/add', wasteAPI.addUser);
 app.get('/api/users', wasteAPI.allUsers);
