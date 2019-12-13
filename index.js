@@ -46,6 +46,7 @@ app.get('/api/issues', wasteAPI.allIssues);
 app.get('/api/issues/:username', wasteAPI.issuesForUser);
 app.post('/api/addIssue', wasteAPI.createIssue);
 
+// app.get('/api/test', wasteAPI.all);
 
 const PORT = process.env.PORT || 3003;
 

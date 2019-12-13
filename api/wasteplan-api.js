@@ -177,9 +177,16 @@ module.exports = function (wastePlanService) {
     createIssue,
     addUser,
     allUsers,
+
     issuesForUser,
     getOneUser,
     login
+
+    // issuesForUser
+
+    // issuesForUser,
+    // getOneUser
+
 
 
   };

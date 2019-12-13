@@ -36,6 +36,10 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log("Users: ", users);
   }
 
+  async function showIssues() {
+    try {
+      const response = await wastePlanService.getIssues();
+      const results = response.data;
 
   // const url = `https://geocoder.api.here.com/6.2/geocode.json?searchtext=samora machel&app_id=DnSYeWcQdc7VGpTWdf3R&app_code=MsbWu2efljEK5A7w_hrs_g&gen=8`;
   // const APP_ID = `DnSYeWcQdc7VGpTWdf3R`;
