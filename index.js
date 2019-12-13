@@ -25,7 +25,6 @@ const wasteAPI = WasteAPI(wastePlanService);
 
 app.use(express.static(__dirname + '/public'));
 
-
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(bodyParser.json());
@@ -37,6 +36,7 @@ app.get('/', (req, res, next) => {
   });
 });
 // app.get('/api/test', wasteAPI.all);
+app.post('/api/login', wasteAPI.login);
 
 app.post('/api/users/add', wasteAPI.addUser);
 app.get('/api/users', wasteAPI.allUsers);
@@ -47,9 +47,6 @@ app.get('/api/issues/:username', wasteAPI.issuesForUser);
 app.post('/api/addIssue', wasteAPI.createIssue);
 
 // app.get('/api/test', wasteAPI.all);
-
-
-
 
 const PORT = process.env.PORT || 3003;
 

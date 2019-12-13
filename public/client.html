@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -19,12 +19,10 @@
       <nav class="navbar navbar-lighter bg-dark justify-content-between">
          <a class="navbar-brand">Navbar</a>
          <form class="form-inline">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login / Signup /Logout</button>
+            <button class="btn btn-outline-success my-2 my-sm-0" type="button" data-toggle="modal"
+               data-target="#exampleModal">Login / Signup</button>
          </form>
       </nav>
-
-
-
       <script type="text/x-handlebars-template" class="issuesTemplate">
          {{#each issues}}
             <tr>
@@ -50,15 +48,14 @@
             <textarea class="form-control" id="formControlTextarea1" rows="4">Address From database</textarea>
          </div>
          <div class="form-check">
-
             <input class="form-check-input" type="radio" name="exampleRadios" id="deliveryCheck" value="Delivery">
             <label class="form-check-label" for="deliveryCheck">Delivery</label>
-            
          </div>
          <div class="form-check">
 
-         <input class="form-check-input" type="radio" name="exampleRadios" id="collectionCheck" value="Collection" checked>
-         <label class="form-check-label" for="collectionCheck">Collection</label>
+            <input class="form-check-input" type="radio" name="exampleRadios" id="collectionCheck" value="Collection"
+               checked>
+            <label class="form-check-label" for="collectionCheck">Collection</label>
          </div>
          <button class="btn btn-primary addIssue">Submit</button>
       </form>
@@ -86,11 +83,159 @@
 
    <div>
       <button type="submit" class="btn btn-primary issuesFor">Show Issues For Existing User</button>
+   </div> -->
+
+
+
+   <!-- Modal -->
+   <!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h5 class="modal-title" id="exampleModalLabel">Signin or Register </h5>
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+               </button>
+            </div>
+            <div class="modal-body"> -->
+               <!-- <form>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+         </form> -->
+
+
+               <!-- <div>
+                  <div class="container mt-2 mb-4">
+                     <div class="col-sm-12">
+                        <ul class="nav nav-pills nav-fill mb-1" id="pills-tab" role="tablist">
+                           <li class="nav-item"> <a class="nav-link active" id="pills-signin-tab" data-toggle="pill"
+                                 href="#pills-signin" role="tab" aria-controls="pills-signin" aria-selected="true">Sign
+                                 In</a> </li>
+                           <li class="nav-item"> <a class="nav-link" id="pills-signup-tab" data-toggle="pill"
+                                 href="#pills-signup" role="tab" aria-controls="pills-signup" aria-selected="false">Sign
+                                 Up</a> </li>
+                        </ul>
+                        <div class="tab-content" id="pills-tabContent">
+                           <div class="tab-pane fade show active" id="pills-signin" role="tabpanel" aria-labelledby="pills-signin-tab">
+                              <form id="singninFrom">
+                                 <div class="form-group">
+                                    <label class="font-weight-bold">Username</label>
+                                    <input type="text" name="signinusername" id="signinusername" class="form-control"
+                                       placeholder="Enter valid email" required>
+                                 </div>
+                                 <div class="form-group">
+                                    <label class="font-weight-bold">Password</label>
+                                    <input type="password" name="signinpassword" id="signinpassword" class="form-control"
+                                       placeholder="***********">
+                                 </div>
+                                 <div class="form-group">
+                                    <input id="signinBtn" name="button" value="Sign In" class="btn btn-block btn-primary">
+                                 </div>
+                              </form>
+                           </div>
+
+
+                           <div class="tab-pane fade" id="pills-signup" role="tabpanel"
+                              aria-labelledby="pills-signup-tab">
+                                 <form id="singnupFrom">
+                                    <div class="form-group">
+                                       <label class="font-weight-bold">Name</label>
+                                       <input type="text" name="signupname" id="signupname" class="form-control" placeholder="Enter name">
+                                    </div>
+                                    <div class="form-group">
+                                       <label class="font-weight-bold">Emai</label>
+                                       <input type="email" name="signupemail" id="signupemail" class="form-control" placeholder="Enter valid email">
+                                    </div>
+                                    <div class="form-group">
+                                       <label class="font-weight-bold">User Name</label>
+                                       <input type="text" name="signupusername" id="signupusername" class="form-control" placeholder="Choose your user name" required>
+                                    </div>
+                                    <div class="form-group">
+                                       <label class="font-weight-bold">Address</label>
+                                       <textarea class="form-control" id="signupaddress" rows="4">Address From database</textarea>
+                                    </div>
+                                    <div class="form-group">
+                                       <label class="font-weight-bold">Password</label>
+                                       <input type="password" name="signuppassword" id="signuppassword" class="form-control" placeholder="***********">
+                                    </div>
+                           
+                                    <div class="form-group">
+                                       <input id="signupBtn" type="button" name="signupBtn" value="Sign Up" class="btn btn-block btn-primary">
+                                    </div> -->
+                                    <!-- <div class="form-check">
+                                       <input class="form-check-input" type="radio" name="exampleRadios" id="deliveryCheck" value="Delivery">
+                                       <label class="form-check-label" for="deliveryCheck">Delivery</label>
+                                    </div>
+                                    <div class="form-check">
+                                       <input class="form-check-input" type="radio" name="exampleRadios" id="deliveryCheck" value="Delivery">
+                                       <label class="form-check-label" for="deliveryCheck">Delivery</label>
+                                    </div> -->
+                                 <!-- </form>
+                              
+                           </div>
+                        </div>
+                     </div> -->
+
+                     <!-- Modal -->
+                     <!-- <div class="modal fade" id="forgotPass" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                           <form method="post" id="forgotpassForm">
+                              <div class="modal-content">
+                                 <div class="modal-header">
+                                    <h5 class="modal-title">Forgot Password</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span
+                                          aria-hidden="true">&times;</span> </button>
+                                 </div>
+                                 <div class="modal-body">
+                                    <div class="form-group">
+                                       <label>Email <span class="text-danger">*</span></label>
+                                       <input type="email" name="forgotemail" id="forgotemail" class="form-control"
+                                          placeholder="Enter your valid email..." required>
+                                    </div>
+                                    <div class="form-group">
+                                    </div>
+                                 </div>
+                                 <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Sign
+                                       In</button>
+                                    <button type="submit" name="forgotPass" class="btn btn-primary"><i
+                                          class="fa fa-envelope"></i> Send Request</button>
+                                 </div>
+                              </div>
+                           </form>
+                        </div>
+                     </div>
+                  </div>
+
+            </div>
+
+
+
+
+            </div>
+         </div>
+      </div>
    </div>
+ -->
 
 
 
-   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+
+
+
+
+
+
+   <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
       integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
       crossorigin="anonymous"></script>
 
@@ -101,4 +246,4 @@
    <script src="./client.js"></script>
 </body>
 
-</html>
+</html> -->

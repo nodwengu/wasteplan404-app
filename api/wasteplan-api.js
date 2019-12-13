@@ -58,29 +58,24 @@ module.exports = function (wastePlanService) {
 
       email = email.toLowerCase();
 
-      // const user = await wastePlanService.getUser(username);
-      // console.log("USER", user);
+      // Verify email existance
+
+      const user = await wastePlanService.getUser(username);
 
       await wastePlanService.addUser(body);
 
-      // if (user.length > 0) { // Checks if user already exist
-      //   return res.json({
-      //     success: false,
-      //     message: "Error: Account already exists.",
-      //   });
-      // } else {
-      //   await wastePlanService.addUser(body);
-      //   res.json({
-      //     status: 'success',
-      //     data: "data added",
-      //     message: "User successfully created"
-      //   });
-      // }
+      if (user.length > 0) { // Checks if user already exist
+        return res.json({
+          success: false,
+          message: "Error: Account already exists.",
+        });
+      }
 
       res.json({
         status: 'success',
         data: "data added",
         message: "User successfully created"
+
       });
 
     }
@@ -102,11 +97,12 @@ module.exports = function (wastePlanService) {
     }
   }
 
-  async function issuesForUser(req, res, next) {
+  async function issuesForUser(req, res, next) {;
     try {
       const { params } = req;
+      const { username } = params;
 
-      const issuesFor = await wastePlanService.getAllUserIssues();
+      const issuesFor = await wastePlanService.getAllUserIssues(username);
 
       res.json({
         status: 'success',
@@ -135,6 +131,46 @@ module.exports = function (wastePlanService) {
     }
   }
 
+  /*/
+   Login
+ */
+  async function login(req, res, next) {
+
+    try {
+      const { body } = req;
+      let { username, password } = body;
+
+      if (!username) {
+        return res.json({ success: false, message: "Error: username cannot be blank." });
+      }
+      if (!password) {
+        return res.json({ success: false, message: "Error: password cannot be blank." });
+      }
+
+      username = username.toLowerCase();
+
+      const user = await wastePlanService.getUser(username);
+
+      if (user && user.username == username && user.password == password) {
+    
+        res.json({
+          success: true,
+          message: "Logged in...",
+        });
+      } 
+      res.json({
+        success: false,
+        message: "Error: Invalid login",
+      });
+
+    }
+    catch (error) {
+      console.log(error);
+    }
+
+  };
+
+
 
   return {
     allIssues,
@@ -143,7 +179,8 @@ module.exports = function (wastePlanService) {
     allUsers,
 
     issuesForUser,
-    getOneUser
+    getOneUser,
+    login
 
     // issuesForUser
 
