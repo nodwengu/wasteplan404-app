@@ -1,7 +1,9 @@
 module.exports = function WastePlanService(pool) {
 
   async function all() {
-    let sql = `SELECT * FROM issues`;
+    const sql = `SELECT i.issueid, i.status, i.date, i.type, i.latitude, i.longitude, u.username, u.name, u.address
+                 FROM issues i
+                 INNER JOIN users u ON i.userid = u.id`;
                    
     let results = await pool.query(sql);
 
@@ -43,7 +45,7 @@ module.exports = function WastePlanService(pool) {
   }
 
   async function getAllUserIssues(username) {
-    const sql = `SELECT i.issueid, i.status, i.date, i.type, i.latitude, i.longitude, u.username
+    const sql = `SELECT i.issueid, i.status, i.date, i.type, i.latitude, i.longitude, u.username, u.name, u.address
                  FROM issues i
                  INNER JOIN users u ON i.userid = u.id
                  WHERE u.username = '${username}'`;

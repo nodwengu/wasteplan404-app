@@ -4,9 +4,10 @@ body{
     background-size: cover;
     }
     .navbar-default  {
-        color: #777;
+         color: #777;
     }
     .navbar-default {
+       
         background-color:grey;
         border-color: #E7E7E7;
     }
@@ -25,4 +26,10 @@ body{
     }
     h6{
         color: black;
+    }
+
+    .container1{
+        color: black;
+        margin-top: 5em;
+        margin-left: 30em;
     }

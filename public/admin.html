@@ -26,11 +26,11 @@
       <script type="text/x-handlebars-template" class="issuesTemplate">
         {{#each issues}}
            <tr>
-              <td>{{type}}</td>
-              <td>{{latitude}}</td>
-              <td>{{longitude}}</td>
-              <td>{{issueid}}</td>
-              <td>{{status}}</td>
+              <td>{{name}}</td>
+               <td>{{date}}</td>
+               <td>{{address}}</td>
+               <td>{{status}}</td>
+               <td>{{type}}</td>
               <td><button type="button" class="btn btn-dark">Dark</button></td>
            </tr>
         {{/each}}
@@ -41,12 +41,13 @@
          <table class="table table-striped table-dark">
             <thead>
                <tr>
-                  <th scope="col">Type</th>
-                  <th scope="col">Lat</th>
-                  <th scope="col">Long</th>
-                  <th scope="col">ID</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Date</th>
+                  <th scope="col">address</th>
                   <th scope="col">Status</th>
-                  <th scope="col">Actions</th>
+                  
+                  <th scope="col">Type</th>
+                  <th scope="col">Action</th>
                </tr>
             </thead>
             <tbody id="issuesDiv">
